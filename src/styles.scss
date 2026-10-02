@@ -1,0 +1,58 @@
+@use './app/app';
+
+:root {
+	color-scheme: dark;
+	--ink: #f2f4ef;
+	--muted: #a1aaa6;
+	--soft: #77817d;
+	--background: #080e0d;
+	--panel: rgba(19, 29, 27, 0.72);
+	--panel-strong: rgba(24, 36, 33, 0.86);
+	--line: rgba(207, 230, 219, 0.12);
+	--line-bright: rgba(168, 224, 193, 0.27);
+	--mint: #8fe0b4;
+	--mint-deep: #4caa7b;
+	--mint-wash: rgba(143, 224, 180, 0.1);
+	--amber: #f1c38a;
+	--radius: 18px;
+	--shadow: 0 24px 80px rgba(0, 0, 0, 0.34);
+	--cursor-x: 50vw;
+	--cursor-y: 50vh;
+	font-family: 'Manrope', 'Segoe UI', sans-serif;
+	background: var(--background);
+	color: var(--ink);
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	scroll-behavior: smooth;
+	scroll-padding-top: 100px;
+}
+
+:root.light-theme {
+	color-scheme: light;
+	--ink: #17231c;
+	--muted: #52645a;
+	--soft: #728178;
+	--background: #f1f5f1;
+	--panel: rgba(255, 255, 255, 0.76);
+	--panel-strong: rgba(255, 255, 255, 0.92);
+	--line: rgba(38, 71, 51, 0.15);
+	--line-bright: rgba(42, 127, 75, 0.33);
+	--mint: #247948;
+	--mint-deep: #438a5f;
+	--mint-wash: rgba(46, 139, 81, 0.09);
+	--amber: #a86a25;
+	--shadow: 0 20px 60px rgba(26, 51, 33, 0.1);
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; background: var(--background); }
+button, input, textarea { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+a { color: inherit; }
+::selection { color: #06100b; background: var(--mint); }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+	*, *::before, *::after { scroll-behavior: auto !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
