@@ -10,7 +10,7 @@ import { portfolio } from '../data/portfolio.data';
       <button class="menu-toggle" type="button" (click)="menuOpen = !menuOpen" [attr.aria-expanded]="menuOpen" aria-label="Toggle navigation"><span></span><span></span></button>
       <nav class="nav-links" [class.open]="menuOpen" aria-label="Main navigation">
         @for (link of links; track link.id) {
-          <a [href]="'#' + link.id" [class.active]="activeSection === link.id" (click)="menuOpen = false">{{ link.label }}</a>
+          <a [href]="'#' + link.id" [class.active]="activeSection === link.id" (click)="closeMenu()">{{ link.label }}</a>
         }
         <button class="theme-toggle" type="button" (click)="toggleTheme()" [attr.aria-label]="lightMode ? 'Switch to dark mode' : 'Switch to light mode'">{{ lightMode ? '☾' : '☼' }} <span>{{ lightMode ? 'DARK' : 'LIGHT' }}</span></button>
         @if (profile.resumeAvailable) {
@@ -35,6 +35,10 @@ export class SiteHeaderComponent {
   menuOpen = false;
   activeSection = 'home';
   lightMode = false;
+
+  closeMenu(): void {
+    this.menuOpen = false;
+  }
 
   toggleTheme() {
     this.lightMode = !this.lightMode;
